@@ -1,0 +1,17 @@
+{
+  "name": "breadboss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && yarn && yarn build"
+  },
+  "keywords": [],
+  "author": "tolgaulukan <tolga.ulukan@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  }
+}
