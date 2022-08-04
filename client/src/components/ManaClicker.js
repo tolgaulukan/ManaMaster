@@ -7,7 +7,7 @@ import Wizard from "../images/Wizard.png"
 import GoblinAxe from "../images/GoblinAxe.png"
 import Knight from "../images/Knight.png"
 import GoblinArcher from "../images/GoblinArcher.png"
-
+import Modal from './Modal';
 function ManaCounter(props) {
   // displays the counter
   let Mana = props.mana
@@ -41,32 +41,36 @@ function ManaClicker(props) {
 
     }
   }, [isAutoClicking, currentAutoClick])
-console.log(localStorage.getItem('mana'))
-  // setInterval(() => {
-  //   if (!isGoblinAxeDisplayed) {
-  //     setIsGoblineAxeDisplayed(true)
-  //   }
-  // }, (Math.random() * (100000 - 20000) + 20000));
+  console.log(localStorage.getItem('mana'))
+  setInterval(() => {
+    if (!isGoblinAxeDisplayed) {
+      setIsGoblineAxeDisplayed(true)
+    }
+  }, (Math.random() * (100000 - 20000) + 20000));
 
-  // setInterval(() => {
-  //   if (!isGoblinArcherDisplayed) {
-  //     setIsGoblineArcherDisplayed(true)
-  //   }
-  // }, (Math.random() * (100000 - 20000) + 20000));
+  setInterval(() => {
+    if (!isGoblinArcherDisplayed) {
+      setIsGoblineArcherDisplayed(true)
+    }
+  }, (Math.random() * (100000 - 20000) + 20000));
   // when goblin appears he takes mana away
   useEffect(() => {
-    if (isGoblinAxeDisplayed) {
-      if (currentMana < 100) {
-        setInterval(() => {
-          setMana((currentMana) => currentMana - GoblinAxeDamage)
-        }, 1000);
-      } else if (currentMana >= 100 && currentMana < 500) {
-        setGoblinAxeDamage(10)
-        setInterval(() => {
-          setMana((currentMana) => currentMana - GoblinAxeDamage)
-        }, 1000);
+    const goblinAxeInterval = {
+      if(isGoblinAxeDisplayed) {
+        if (currentMana < 100) {
+          setInterval(() => {
+            setMana((currentMana) => currentMana - GoblinAxeDamage)
+          }, 1000); return () => clearInterval = { goblinAxeInterval }
+        }
+        //   if (currentMana >= 100 && currentMana < 500) {
+        //     setGoblinAxeDamage(10)
+        //     setInterval(() => {
+        //       setMana((currentMana) => currentMana - GoblinAxeDamage)
+        //     }, 1000); return () => clearInterval={goblinAxeInterval}
+        //   }
       }
     }
+
   }, [isGoblinAxeDisplayed])
   //displays the goblin archer
   useEffect(() => {
@@ -83,6 +87,64 @@ console.log(localStorage.getItem('mana'))
       }
     }
   }, [isGoblinArcherDisplayed])
+  //  sets mana state as local storage mana
+  useEffect(() => {
+    const localStorageMana = localStorage.getItem('mana')
+    console.log(localStorageMana)
+    if (localStorageMana != null) {
+      setMana(JSON.parse(localStorageMana))
+    }
+  }, [])
+  // adds mana to local storage
+  useEffect(() => {
+    localStorage.setItem('mana', JSON.stringify(currentMana))
+  }, [currentMana])
+  //  sets click power state as local storage click power
+  useEffect(() => {
+    const localStorageClickPower = localStorage.getItem('clickPower')
+    console.log(localStorageClickPower)
+    if (localStorageClickPower != null) {
+      setClickPower(JSON.parse(localStorageClickPower))
+    }
+  }, [])
+  // adds clickpower to local storage
+  useEffect(() => {
+    localStorage.setItem('clickPower', JSON.stringify(currentClickPower))
+  }, [currentClickPower])
+  //  sets click upgrade cost state as local storage click power
+  useEffect(() => {
+    const localStorageClickUpgradeCost = localStorage.getItem('clickUpgradeCost')
+    if (localStorageClickUpgradeCost != null) {
+      setClickUpgradeCost(JSON.parse(localStorageClickUpgradeCost))
+    }
+  }, [])
+  // adds click upgrade cost to local storage
+  useEffect(() => {
+    localStorage.setItem('clickUpgradeCost', JSON.stringify(currentClickUpgradeCost))
+  }, [currentClickUpgradeCost])
+  //  sets miner upgrade cost state as local storage click power
+  useEffect(() => {
+    const localStorageMinerUpgradeCost = localStorage.getItem('minerUpgradeCost')
+    console.log(localStorageMinerUpgradeCost)
+    if (localStorageMinerUpgradeCost != null) {
+      setMinerUpgradeCost(JSON.parse(localStorageMinerUpgradeCost))
+    }
+  }, [])
+  // adds miner upgrade cost to local storage
+  useEffect(() => {
+    localStorage.setItem('minerUpgradeCost', JSON.stringify(currentMinerUpgradeCost))
+  }, [currentMinerUpgradeCost])
+
+  useEffect(() => {
+    const localStorageAutoClick = localStorage.getItem('autoClick')
+    if (localStorageAutoClick != null) {
+      setAutoClick(JSON.parse(localStorageAutoClick))
+    }
+  }, [])
+  // adds miner upgrade cost to local storage
+  useEffect(() => {
+    localStorage.setItem('autoClick', JSON.stringify(currentAutoClick))
+  }, [currentAutoClick])
   // displays the pickaxe cartoon
   let displaySplash = () => {
     setIsActive(true)
@@ -116,10 +178,7 @@ console.log(localStorage.getItem('mana'))
     setMana(prevCurrentMana => prevCurrentMana + currentClickPower)
     localStorage.setItem('mana', JSON.stringify(currentMana))
   }
-  useEffect(() => {
-    localStorage.setItem('mana', JSON.stringify(currentMana))
-  }, [currentMana])
-  // upgrade for clicking
+  // upgrade for click power
   const UpgradeClickPower = (newPower, upgradeCost) => {
     if (currentMana < currentClickUpgradeCost) {
       alert('Not Enough Mana!!')
@@ -145,8 +204,9 @@ console.log(localStorage.getItem('mana'))
 
   return <div className='home'>
     <ManaCounter mana={currentMana} />
+    {/* <Modal></Modal> */}
     <div className='Upgrades'>
-      <p>{currentClickPower.toLocaleString('en-US')} Click Power</p>
+      <p className='ClickPower'>{currentClickPower.toLocaleString('en-US')} Click Power</p>
       <button onClick={() => { UpgradeClickPower(currentClickPower * 1.3, currentClickUpgradeCost * 2) }}>
         <figure>
           <img src={GameButton} className="UpgradeImage" alt="Upgrade Button" height="200"></img>
@@ -159,7 +219,6 @@ console.log(localStorage.getItem('mana'))
           <figcaption className='MinerText'>  Hire Mana Miner Cost: {currentMinerUpgradeCost} Mana </figcaption>
         </figure>
       </button>
-      
       <button onClick={() => { displayWizard() }}>
         <figure>
           <img className="MinerImage" src={GameButton} alt="Upgrade Button" height="200"></img>
@@ -176,20 +235,23 @@ console.log(localStorage.getItem('mana'))
     </div>
     <button onClick={() => { handleManaUpdate(); displaySplash() }}>
       <div className='OrbCombo'>
-        <img className={currentClickPower >= 5 ? "Orb BlueOrb": "Orb"} src={Orb} alt="Mana Orb" height="200"></img>
+        <img className={currentClickPower >= 5 ? "Orb BlueOrb" : "Orb"} src={Orb} alt="Mana Orb" height="200"></img>
         <img className={isActive ? 'Visible' : 'GreenSplash'} src={GreenSplash} alt="green splash" height="25"></img>
         <img className={isActive ? 'Visible' : 'GreenSplash'} src={GreenSplash} alt="green splash" height="50"></img>
         <img className={isActive ? 'Visible' : 'GreenSplash'} src={GreenSplash} alt="green splash" height="25"></img>
       </div></button><br></br><br></br>
-    <div className='PlayingField'>
+    <div className='Main'>
+      <div className='PlayingField'>
 
-      <div className='Wizard'>
-        <img className={isGoblinAxeDisplayed ? 'Visible' : 'NotVisible'} alt='goblinAxe' src={GoblinAxe} height='200'></img>
-        <img className={isWizardDisplayed ? 'Visible' : 'NotVisible'} alt='wizard' src={Wizard} height='200'></img>
-      </div>
-      <div className='Knight'>
-        <img className={isGoblinArcherDisplayed ? 'Visible' : 'NotVisible'} alt='goblinArcher' src={GoblinArcher} height='200'></img>
+        <div className='Wizard'>
+        <img className={isGoblinAxeDisplayed ? 'Visible' : 'NotVisible'} alt='goblinAxe' src={GoblinAxe} height='180'></img>
+          <img className={isGoblinArcherDisplayed ? 'Visible' : 'NotVisible'} alt='goblinArcher' src={GoblinArcher} height='200'></img>
+        
+        </div>
+        <div className='Knight'>
         <img className={isKnightDisplayed ? 'Visible' : 'NotVisible'} alt='knight' src={Knight} height='200'></img>
+          <img className={isWizardDisplayed ? 'Visible' : 'NotVisible'} alt='wizard' src={Wizard} height='200'></img>
+        </div>
       </div>
     </div>
   </div>

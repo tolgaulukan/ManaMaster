@@ -1,10 +1,13 @@
 const express = require('express');
 const pg = require('pg')
 
+const sessionRouter = require('./controllers/session')
+
 const port = process.env.PORT || 3002;
 const app = express();
 
 app.use(express.static('./client/build'))
+app.use(express.json())
 
 let db;
 if (process.env.NODE_ENV === 'production') {
@@ -20,10 +23,13 @@ if (process.env.NODE_ENV === 'production') {
     password: 'optional_password' // If you have a password on your local db
   })
 }
+// use routers
+app.use('/', sessionsRouter)
 
-app.get('/', (req, res) => {
-  res.send('hello')
-});
+app.use((req, res, next) => {
+  console.log(`I am middleware! Request ${req.path}`)
+  next()
+})
 
 app.listen(port, () => {
   console.log(`server listening on port: ${port}`)
