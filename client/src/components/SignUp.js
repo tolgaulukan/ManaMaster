@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import { useState } from "react"
 import Axios from 'axios'
 import {Navigate} from 'react-router-dom'

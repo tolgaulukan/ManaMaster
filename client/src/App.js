@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import ManaClicker from './ManaClicker';
-import LoginPage from './Login';
-import DisplayRules from './Rules';
+import ManaClicker from './components/ManaClicker';
+import LoginPage from './components/Login';
+import DisplayRules from './components/Rules';
 //used for routers to different pages
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import SignUpPage from './SignUp';
+import SignUpPage from './components/SignUp';
 
 function App() {
 

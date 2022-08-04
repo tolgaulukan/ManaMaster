@@ -203,3 +203,24 @@ img {
   height: 1000px;
 
 }
+.NotVisible {
+  visibility: hidden;
+}
+.Wizard {
+  text-align: right;
+  padding-top: 100px;
+}
+.PlayingField {
+  background-color: #53565A;
+  margin: 50px;
+  margin-top: 200px;
+  width: 800px;
+  height: 800px;
+  border-radius: 10%;
+}
+.CPS {
+  text-align:center;
+}
+.BlueOrb {
+  filter: invert(81%) sepia(60%) saturate(329%) hue-rotate(113deg) brightness(97%) contrast(88%)
+}

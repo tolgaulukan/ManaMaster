@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import { useState } from "react"
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({ name: "", email: "", password: "" })
