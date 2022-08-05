@@ -9,8 +9,11 @@ function DisplayRules() {
             <h2 className="rules">ManaMaster is a super easy game to play, if you are familiar with cookie clicker, this will be a walk in the park <br></br><br></br>
             Your goal is to make as much mana as possible, to do that you must click the mana orb which will give you 1 mana <br></br><br></br>
             Overtime you will be able to buy upgrades to make your cursor click with more power or hire a miner to help you gain mana in the background<br></br><br></br>
+            But be careful because those upgrades will cost more overtime and it may become hard to choose between an upgrade and defeating a goblin <br></br><br></br>
+            Whats a goblin you ask? <br></br><br></br>
             Goblins will come for your mana as they use to it make them stronger, buy a wizard to beat goblin axemen <br></br><br></br>
-            Or a knight if there are goblin archers
+            Or a knight if there are goblin archers <br></br><br></br>
+            Your goal is to get to 10,000 mana where there is a secret message waiting for you...
             <br></br><br></br>
             </h2>
         </div>

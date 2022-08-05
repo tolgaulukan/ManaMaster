@@ -30,7 +30,10 @@ input, button {
   border: none;
   outline: none;
 }
-
+.App {
+  background-image: linear-gradient(to bottom, #a744f8, #1ceb95);
+  height: 100vh
+}
 .LoginForm {
   height: 100vh;
   display:flex;
@@ -52,7 +55,7 @@ form:after {
   right: -5px;
   bottom: -5px;
   z-index: 1;
-  background-image: linear-gradient(to bottom, #b376e6, #60007e);
+  background-image: linear-gradient(to bottom, #a744f8, #1ceb95);
 }
 
 
@@ -119,7 +122,7 @@ nav {
   justify-content: center;
 }
 .home {
-  background-image: linear-gradient(to bottom, #b376e6, #00661a);
+  background-image: linear-gradient(to bottom, #a744f8, #1ceb95);
 }
 button {
   cursor: pointer
@@ -159,24 +162,16 @@ figure {
   text-align: center;
   left: 0;
   top: 0;
+  font-size: 20px;
   text-shadow: 0 0 1px white;
   font-weight:bold;
   max-height: 20px;
 }
 
-.UpgradeText {
-  position: absolute;
-  width: 270px;
-  font-size: 13px;
-  line-height: 100px;
-  text-align: center;
-  left: 0;
-  top: 0;
-  text-shadow: 0 0 1px white;
-  font-weight:bold;
-  max-height: 20px;
+.leaderboard {
+  background-image: linear-gradient(to bottom, #a744f8, #1ceb95);
+  height: 100vh
 }
-
 .Upgrades {
   display: flex;
   justify-content: center;
@@ -200,6 +195,9 @@ a {
   color: #00990d;
   
 }
+ body{
+  background-color:#469e79
+}
 h1 {
   font-size: 50px;
 }
@@ -219,7 +217,7 @@ img {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to top, #006609, #a639ff);
+  background-image: linear-gradient(to bottom, #5b5b5b, #ffffff);
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -238,21 +236,21 @@ img {
 .Wizard {
  display: flex;
  flex-direction: row;
- margin-top: 170px;
+ margin-top: 250px;
 }
 .Knight {
   display: flex;
   flex-direction: row-reverse;
-  margin-top: 130px;
+  margin-top: 250px;
   width: 50%;
-  margin-right: 50px;
+  margin-right: 100px;
  }
 .PlayingField {
   background-color: #53565A;
   margin: 50px;
   margin-top: 200px;
-  width: 800px;
-  height: 400px;
+  width: 1200px;
+  height: 600px;
   border-radius: 10%;
   display: flex;
   justify-content: center;
@@ -268,18 +266,29 @@ img {
 .BlueOrb {
   filter: invert(81%) sepia(60%) saturate(329%) hue-rotate(113deg) brightness(97%) contrast(88%)
 }
+.RedOrb {
+  filter: invert(42%) sepia(80%) saturate(4345%) hue-rotate(353deg) brightness(96%) contrast(91%);
+}
+.PurpleOrb {
+  filter: invert(25%) sepia(81%) saturate(7365%) hue-rotate(298deg) brightness(95%) contrast(101%);
+}
+.WhiteOrb {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(104%) contrast(101%);
+}
+.GoldOrb {
+  filter: invert(67%) sepia(50%) saturate(808%) hue-rotate(2deg) brightness(107%) contrast(103%);
+}
 .modal-bg {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(177, 171, 171, 0.5);
   top:0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: visibilty 3s opacity 0,5s, ;
+  
 }
 .bg-active {
   visibility: visible;
@@ -303,7 +312,11 @@ img {
   top: 10px;
   right: 10px;
   font-weight: bold;
-
+}
+.modal-notVisible {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
 }
 .Main {
   max-width: 100%;
@@ -316,4 +329,13 @@ img {
  max-height: 20px;
  max-width: 100px;
 
+}
+.modal-bg button {
+  font-size: larger;
+  background-color: rgb(210, 210, 210);
+  display: block;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 30%;
 }

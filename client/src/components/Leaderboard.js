@@ -1,7 +1,7 @@
 function Leaderboard () {
 
     return (
-        <div>
+        <div className="leaderboard">
             <br></br>
             <h1>Leaderboard</h1>
 
