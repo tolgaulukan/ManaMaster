@@ -1,11 +1,9 @@
 import '../App.css';
 import { useState } from "react"
-// import Axios from 'axios'
-// import {Navigate} from 'react-router-dom'
+
 
 function SignUpPage() {
-//     const url = "/api/users"
-//     const [Submit, setSubmit] = useState(false)
+
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -15,15 +13,7 @@ function SignUpPage() {
     })
    
 
-    // const inputHandler = e => {
-    //     const newdata={...data}
-    //     newdata[e.target.id] = e.target.value
-    //     setData(newdata)
-
-    // }
-
     return (<div>
-        {/* {Submit ? <Navigate to="/"/> : null} */}
         
         <form className='LoginForm' >
             <div className='form-inner'><h2 className="title">Create Account</h2>
