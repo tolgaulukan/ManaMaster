@@ -1,11 +1,12 @@
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-// function NewGame() {
+function NewGame() {
     
-//         let clear = () => {
-//             localStorage.clear}
-//             return (
-//                 {clear}
-//             )
-// }
-// export default NewGame
+        let clear = () => {
+            localStorage.clear()
+        }
+        return (
+            {clear}
+        )
+}
+export default NewGame

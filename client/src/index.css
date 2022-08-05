@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -17,6 +18,7 @@ code {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Cinzel', serif;
+  
 }
 
 a {
@@ -221,21 +223,30 @@ img {
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
-  color: #FFF;
+  color: rgb(0, 0, 0);
   font-weight: 700;
   cursor: pointer;
   margin-top: 100px;
 }
 .PlayingField {
   height: 1000px;
-
+  
 }
 .NotVisible {
   visibility: hidden;
 }
 .Wizard {
-  text-align: left;
+ display: flex;
+ flex-direction: row;
+ margin-top: 170px;
 }
+.Knight {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 130px;
+  width: 50%;
+  margin-right: 50px;
+ }
 .PlayingField {
   background-color: #53565A;
   margin: 50px;
@@ -296,7 +307,13 @@ img {
 }
 .Main {
   max-width: 100%;
-  height: 810px;
+  height: 864px;
   display: flex;
   justify-content: center;
+}
+.GoblinStats {
+ padding: 10px;
+ max-height: 20px;
+ max-width: 100px;
+
 }
