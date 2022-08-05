@@ -6,28 +6,15 @@ import { useState } from "react"
 function SignUpPage() {
 //     const url = "/api/users"
 //     const [Submit, setSubmit] = useState(false)
-//     const [data, setData] = useState({
-//         name: "",
-//         email: "",
-//         password: "",
-//         username: "",
-//         photoURL: ""
-    // })
-    // const submit = e => {
-    //     e.preventDefault();
-    //     Axios.post(url, {
-    //         name:data.name,
-    //         email:data.email,
-    //         password:data.password,
-    //         username:data.username,
-    //         photoURL:data.photoURL
-    //     })
-    //     .//after sign up, redirect to home page
-    //     setSubmit(true)
-    //     //log user in after signup, and set session cookies
-    //     axios.post('/api/sessions', {email: Email, password: Password})
-    //     .then((res) => console.log('new user logged in', res))
-    // }
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        password: "",
+        username: "",
+        photoURL: ""
+    })
+   
+
     // const inputHandler = e => {
     //     const newdata={...data}
     //     newdata[e.target.id] = e.target.value
