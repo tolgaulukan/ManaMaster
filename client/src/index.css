@@ -278,6 +278,9 @@ img {
 .GoldOrb {
   filter: invert(67%) sepia(50%) saturate(808%) hue-rotate(2deg) brightness(107%) contrast(103%);
 }
+.GreenOrb {
+  filter: invert(66%) sepia(98%) saturate(474%) hue-rotate(92deg) brightness(101%) contrast(102%);
+}
 .modal-bg {
   position: fixed;
   width: 100%;

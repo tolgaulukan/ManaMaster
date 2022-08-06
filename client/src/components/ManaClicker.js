@@ -40,6 +40,7 @@ function ManaClicker(props) {
   const [isPurpleOrb, setIsPurpleOrb] = useState(false)
   const [isWhiteOrb, setIsWhiteOrb] = useState(false)
   const [isGoldOrb, setIsGoldOrb] = useState(false)
+  const [isGreenOrb, setIsGreenOrb] = useState(false)
 
 
   useEffect(() => {
@@ -97,6 +98,14 @@ function ManaClicker(props) {
         if ( currentClickPower >= 25) {
           setIsWhiteOrb(false)
           setIsGoldOrb(true)
+        }
+    }
+      , [currentClickPower])
+
+      useEffect(() => {
+        if ( currentClickPower >= 50) {
+          setIsGoldOrb(false)
+          setIsGreenOrb(true)
         }
     }
       , [currentClickPower])
@@ -331,7 +340,7 @@ function ManaClicker(props) {
     </div>
     <button onClick={() => { handleManaUpdate(); displaySplash() }}>
       <div className='OrbCombo'>
-        <img className={classNames({"Orb": true, "BlueOrb": isBlueOrb, 'RedOrb': isRedOrb, 'PurpleOrb': isPurpleOrb, 'WhiteOrb': isWhiteOrb, 'GoldOrb': isGoldOrb})} src={Orb} alt="Mana Orb" height="200"></img>
+        <img className={classNames({"Orb": true, "BlueOrb": isBlueOrb, 'RedOrb': isRedOrb, 'PurpleOrb': isPurpleOrb, 'WhiteOrb': isWhiteOrb, 'GoldOrb': isGoldOrb, 'GreenOrb': isGreenOrb})} src={Orb} alt="Mana Orb" height="200"></img>
         <img className={isActive ? 'Visible' : 'GreenSplash'} src={GreenSplash} alt="green splash" height="25"></img>
         <img className={isActive ? 'Visible' : 'GreenSplash'} src={GreenSplash} alt="green splash" height="50"></img>
         <img className={isActive ? 'Visible' : 'GreenSplash'} src={GreenSplash} alt="green splash" height="25"></img>
