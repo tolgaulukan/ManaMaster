@@ -46,16 +46,16 @@ function ManaClicker(props) {
     if (currentMana < 100) {
       setGoblinAxeDamage(1)
       setGoblinArcherDamage(2)
-    } else if (currentMana > 100) {
+    } else if (currentMana >= 100  && currentMana < 1000) {
       setGoblinAxeDamage(2)
       setGoblinArcherDamage(5)
-    } else if (currentMana > 1000) {
+    } else if (currentMana >= 1000 && currentMana < 2500) {
       setGoblinAxeDamage(5)
       setGoblinArcherDamage(10)
-    } else if (currentMana > 2500) {
+    } else if (currentMana >= 2500 && currentMana < 5000) {
       setGoblinAxeDamage(10)
       setGoblinArcherDamage(25)
-    } else if (currentMana >5000) {
+    } else if (currentMana >= 5000) {
       setGoblinAxeDamage(20)
       setGoblinArcherDamage(50)
     }
