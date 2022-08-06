@@ -116,7 +116,7 @@ function ManaClicker(props) {
       if (!isGoblinAxeDisplayed) {
         setIsGoblinAxeDisplayed(true)
       }
-    }, (Math.random() * (100000 - 50000) + 50000));
+    }, (Math.random() * (100000 - 40000) + 40000));
     return () => clearInterval(goblinAxeDisplay)
   }, [])
 
@@ -126,7 +126,7 @@ function ManaClicker(props) {
       if (!isGoblinArcherDisplayed) {
         setIsGoblinArcherDisplayed(true)
       }
-    }, (Math.random() * (130000 - 60000) + 60000));
+    }, (Math.random() * (130000 - 50000) + 50000));
     return () => clearInterval(goblinArcherDisplay)
   }, []);
   // when goblin appears he takes mana away
