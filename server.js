@@ -8,7 +8,7 @@ app.use(express.json())
 
 /* final catch-all route to index.html defined last */
  server.get('/*', (req, res) => {
-   res.sendFile(__dirname + '/client/build/index.html');
+   res.sendFile(__dirname + '/client/public/index.html');
 })
 
 app.use((req, res, next) => {
