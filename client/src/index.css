@@ -339,3 +339,7 @@ img {
   height: 75px;
   border-radius: 30%;
 }
+.OrbCombo {
+  display: flex;
+  justify-content: center;
+}
